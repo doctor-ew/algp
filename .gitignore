@@ -1,0 +1,34 @@
+# Dependency directories
+node_modules/
+web/node_modules/
+api/node_modules/
+
+pnpm-lock.yaml
+web/pnpm-lock.yaml
+api/pnpm-lock.yaml
+
+# Build outputs
+web/dist/
+api/dist/  # If your API builds to a 'dist' directory
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo

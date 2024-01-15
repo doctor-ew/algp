@@ -1,0 +1,27 @@
+# docker-compose.yml
+
+version: '3.8'
+services:
+  web:
+    build: ./web
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+      - nodeapi
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata:/data/db
+
+  nodeapi:
+    build:
+      context: ./api
+    depends_on:
+      - mongo
+
+volumes:
+  mongodata:
