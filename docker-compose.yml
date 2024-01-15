@@ -1,11 +1,12 @@
-# docker-compose.yml
-
 version: '3.8'
 services:
   web:
     build: ./web
+    volumes:
+      - ./web/:/app
     ports:
-      - "3000:3000"
+      - "3000:3000"#ports:
+    #  - "4321:4321"  # Updated to match the port the web service is listening on
     depends_on:
       - mongo
       - nodeapi
@@ -14,12 +15,12 @@ services:
     image: mongo
     ports:
       - "27017:27017"
-    volumes:
-      - mongodata:/data/db
 
   nodeapi:
     build:
       context: ./api
+    ports:
+      - "4000:4000"  # Expose the nodeapi service on port 4000
     depends_on:
       - mongo
 
