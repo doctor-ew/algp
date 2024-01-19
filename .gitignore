@@ -32,3 +32,4 @@ pnpm-debug.log*
 .vscode/
 *.swp
 *.swo
+X509-cert-5359790680517600107.pem

@@ -17,7 +17,7 @@ RUN pnpm install
 
 # Bundle app source
 COPY . .
-
+COPY X509-cert-5359790680517600107.pem ./
 # Build your app
 RUN pnpm run build
 

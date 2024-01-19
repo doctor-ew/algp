@@ -5,26 +5,11 @@ services:
     volumes:
       - ./web/:/app
     ports:
-      - "3000:3000"#ports:
-    #  - "4321:4321"  # Updated to match the port the web service is listening on
+      - "3000:3000"
     depends_on:
-      - mongo
       - nodeapi
 
-  mongo:
-    build: ./mongo
-    ports:
-      - "27017:27017"
-    volumes:
-        - mongodata:/data/db
-
   nodeapi:
-    build:
-      context: ./api
+    build: ./api
     ports:
-      - "4000:4000"  # Expose the nodeapi service on port 4000
-    depends_on:
-      - mongo
-
-volumes:
-  mongodata:
+      - "4000:4000"
